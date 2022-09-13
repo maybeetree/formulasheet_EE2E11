@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{amsmath}
+\usepackage{bbding}
+\usepackage{amssymb}
+\usepackage{makecell}
+\usepackage[a4paper, margin=0.7in, bottom=25mm, top=16mm, headsep=0mm]{geometry}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{hyperref}
+\usepackage{longtable}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\newcommand{\icol}[1]{% inline column vector
+  \begin{bmatrix}#1\end{bmatrix}%
+}
+
+\newenvironment{amatrix}[1]{%
+	\left\[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right\]
+}
+
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\def\arraystretch{1.3}
+%\pdfsuppresswarningpagegroup=1
+
+\title{Formula Sheet EE2E11}
+\author{MaybE\_Tree}
+\date{2022-09-07}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+%\vfill
+%\begin{center}
+%	\textit{
+%	}
+%\end{center}
+%\pagebreak
+
+\begin{longtable}{lll}
+	\makecell[l]
+	{
+		Y and $\Delta$
+	} &
+	\makecell[l]
+	{
+		\begin{tabular}{|lcc|}
+			\hline
+			& Y & $ \Delta $ \\
+			Voltage magnitude &
+			$ V_{LL} = \sqrt{3}V_f $ & 
+			$ V_{LL} = V_f $ \\
+			Current Magnitude &
+			$ I_L = I_f $ &
+			$ I_L = \sqrt{3} I_f $ \\
+			Phase angle &
+			$ V_{ab} $ leads $ V_a $ by $30 ^\circ $ &
+			$ I_{a} $ lags $ I_{ab} $ by $30 ^\circ $ \\
+			Real Power &
+			$ Q = \sqrt{3}V_{LL}I_L \sin \phi $  &
+			$ Q = \sqrt{3}V_{LL}I_L \sin \phi $  \\
+			Imaginary Power &
+			$ Q = \sqrt{3}V_{LL}I_L \cos \phi $  &
+			$ Q = \sqrt{3}V_{LL}I_L \cos \phi $  \\
+			\hline
+		\end{tabular}
+	} &
+	\textit{\makecell[l]
+		{
+	}} \\
+\end{longtable}
+
+\end{document}
+
