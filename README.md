@@ -1,2 +1,2 @@
-# Formula Sheet EE2E11: [view PDF](formulasheet_EE2M11.pdf)
+# Formula Sheet EE2E11: [view PDF](formulasheet_EE2E11.pdf)
 
