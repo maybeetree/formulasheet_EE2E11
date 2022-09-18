@@ -12,6 +12,9 @@
 \usepackage{minted}
 \usepackage{hyperref}
 \usepackage{longtable}
+\usepackage{fontspec}
+
+\newfontfamily{\meme}{Comic Papyrus}[Extension = .ttf] 
 
 \newcommand{\incfig}[2][1]{%
     \def\svgwidth{#1\columnwidth}
@@ -53,36 +56,88 @@
 %\end{center}
 %\pagebreak
 
+
+\section{Power}
+\begin{center}
+		\fbox{\includegraphics[width=0.6\textwidth]{xfigs/beer/beer.pdf}}
+		\begin{tabular}{|cccc|}
+			\hline
+			\bf Name & \bf Type & \bf Symbol & \bf Unit \\\hline
+			Complex Power & Complex Value & $S$ & VA \\
+			Active Power & $ \text{Re}(S) $  & $P$ & W \\
+			Reactive Power & $ \text{Im}(S) $  & $Q$ & VAr \\
+			Apparent Power & $ |S| $  & $ |S| $  & VA \\
+			\hline
+		\end{tabular}
+\end{center}
+
+\subsection{Factors}
+\begin{center}
+	\begin{tabular}{rl}
+		Power Factor &
+		$ \cfrac{\text{Active Power}}{\text{Apparent Power}} = \text{Distortion Factor} * \text{Displacement Factor}$ \\
+		Distortion Factor &
+		$ \cfrac{\text{RMS of fundamental}}{\text{RMS of total}} = 1 \quad \text{(when no harmonics)} $ \\
+		Displacement Factor &
+		$ \cos \phi $, where $\phi$ is phase difference between voltage and current \\
+	\end{tabular}
+\end{center}
+		
+\section{Three-phase}
+\begin{center}
+		\begin{tabular}{|lcc|}
+			\hline
+			\bf Property & \bf Y & $ \pmb \Delta $ \\\hline
+			Voltage&
+			$ V_{LL} = \sqrt{3}V_\phi $ & 
+			$ V_{LL} = V_\phi $ \\
+			Current&
+			$ I_L = I_\phi $ &
+			$ I_L = \sqrt{3} I_\phi $ \\
+			Phase&
+			$ V_{ab} $ leads $ V_a $ by $30 ^\circ $ &
+			$ I_{a} $ lags $ I_{ab} $ by $30 ^\circ $ \\
+			Active Power &
+			\multicolumn{2}{c|}{
+				$ P = \sqrt{3}V_{LL}I_L \cos \phi $
+			} \\
+			Reactive Power &
+			\multicolumn{2}{c|}{
+				$ Q = \sqrt{3}V_{LL}I_L \sin \phi $
+			} \\
+			Apparent Power &
+			\multicolumn{2}{c|}{
+				$ |S| = \sqrt{3}V_\phi I_\phi $
+			} \\
+			\hline
+		\end{tabular}
+		\begin{itemize}
+			\item All powers are given as total power
+				( $ 3 * \text{Power of single load/coil}  $ )
+			\item
+				$ V_\phi $ is voltage across one coil.
+			\item
+				$ I_\phi $ is current through one coil.
+			\item 
+				$ \phi $  is phase difference between voltage and current
+			(conventionally, voltage has 0 phase offset).
+		\end{itemize}
+\end{center}
+
 \begin{longtable}{lll}
 	\makecell[l]
 	{
-		Y and $\Delta$
+		\meme Parama's equation
 	} &
 	\makecell[l]
 	{
-		\begin{tabular}{|lcc|}
-			\hline
-			& Y & $ \Delta $ \\
-			Voltage magnitude &
-			$ V_{LL} = \sqrt{3}V_f $ & 
-			$ V_{LL} = V_f $ \\
-			Current Magnitude &
-			$ I_L = I_f $ &
-			$ I_L = \sqrt{3} I_f $ \\
-			Phase angle &
-			$ V_{ab} $ leads $ V_a $ by $30 ^\circ $ &
-			$ I_{a} $ lags $ I_{ab} $ by $30 ^\circ $ \\
-			Real Power &
-			$ Q = \sqrt{3}V_{LL}I_L \sin \phi $  &
-			$ Q = \sqrt{3}V_{LL}I_L \sin \phi $  \\
-			Imaginary Power &
-			$ Q = \sqrt{3}V_{LL}I_L \cos \phi $  &
-			$ Q = \sqrt{3}V_{LL}I_L \cos \phi $  \\
-			\hline
-		\end{tabular}
+		$ P = \cfrac{V}{I}  $ 
 	} &
 	\textit{\makecell[l]
 		{
+			$V$ is voltage,
+			$I$ is current,
+			$P$ is power.
 	}} \\
 \end{longtable}
 
