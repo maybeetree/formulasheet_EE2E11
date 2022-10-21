@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{longtable}
 \usepackage{fontspec}
+\usepackage{units}
 
 \newfontfamily{\meme}{Comic Papyrus}[Extension = .ttf] 
 
@@ -123,6 +124,50 @@
 			(conventionally, voltage has 0 phase offset).
 		\end{itemize}
 \end{center}
+
+\section{AC Machines}
+\begin{longtable}{lll}
+	\makecell[l]
+	{
+		Synchronous Speed
+	} &
+	\makecell[l]
+	{
+		$ n_s = \cfrac{120f}{P} = \cfrac{60f}{p}  $ 
+	} &
+	\makecell[l]
+		{
+			$P$ is poles, \\
+			$p=\nicefrac{P}{2}$ is pole pairs.
+	} \\
+
+	\makecell[l]
+	{
+		Rotor Speed
+	} &
+	\makecell[l]
+	{
+		$ n_r = (1-s) n_s$
+	} &
+	\makecell[l]
+		{
+			$0 \leq s \leq 1$ is slip.
+	} \\
+
+
+	\makecell[l]
+	{
+		Rotor Current Frequency
+	} &
+	\makecell[l]
+	{
+		$ f_r = s f_s $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+\end{longtable}
 
 \begin{longtable}{lll}
 	\makecell[l]
