@@ -13,7 +13,8 @@
 \usepackage{hyperref}
 \usepackage{longtable}
 \usepackage{fontspec}
-\usepackage{units}
+\usepackage{nicefrac}
+\usepackage{siunitx}
 
 \newfontfamily{\meme}{Comic Papyrus}[Extension = .ttf] 
 
@@ -125,12 +126,235 @@
 		\end{itemize}
 \end{center}
 
+\section{Magnetic Concepts}
+\begin{center}
+	\begin{tabular}{cccc}
+		Field Strength & Flux Density & Magnetic Flux & Flux Linkage \\
+		$H$ & $\vec{B}$ & $\Phi$ & $\lambda$ \\
+		$[\unit{\ampere\per\meter}]$ &
+		$[\unit{\tesla}] = [\unit{\volt\second\per\meter\squared}]$ &
+		$[\unit{\weber}]$ &
+		$[\unit{\weber}]$ \\
+		- &
+		$B = \mu_0 \mu_r H$ &
+		$ \Phi = \vec{B} \cdot \vec{A}  $ &
+		$ \lambda = N \Phi $ \\
+		\includegraphics[width=0.15\textwidth]{xfigs/strength/strength.pdf} &
+		\includegraphics[width=0.15\textwidth]{xfigs/density/density.pdf} &
+		\includegraphics[width=0.15\textwidth]{xfigs/flux/flux.pdf} &
+		\includegraphics[width=0.15\textwidth]{xfigs/linkage/linkage.pdf} &
+	\end{tabular}
+\end{center}
+
+
+\section{General Equations}
+\begin{longtable}{lll}
+	\makecell[l]
+	{
+		Speed
+	} &
+	\makecell[l]
+	{
+		$ [\unit{\meter\per\second}] = \cfrac{5}{18} [\unit{\km\per\hour}] $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+	\makecell[l]
+	{
+		Angular Speed
+	} &
+	\makecell[l]
+	{
+		$ v = \omega R $ 
+	} &
+	\makecell[l]
+		{
+			R is radius,
+			v is linear speed.
+	} \\
+
+	\makecell[l]
+	{
+		Revolutions per Minute } & \makecell[l]
+	{
+		$ 
+		[\unit{\radian\per\second}] = \cfrac{2\pi}{60} [\text{rpm}] $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+	\makecell[l]
+	{
+		Power
+	} & \makecell[l]
+	{
+		$ P_{\text{mech}} = T \omega $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+	\makecell[l]
+	{
+		Turns Ratio: Voltage
+	} &
+	\makecell[l]
+	{
+		$ \cfrac{V_1}{V_2} = \cfrac{N_1}{N_2}  $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+	\makecell[l]
+	{
+		Turns Ratio: Current
+	} &
+	\makecell[l]
+	{
+		$ \cfrac{i_1}{i_2} = \cfrac{N_2}{N_1}  $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+\end{longtable}
+
+\section{Converters}
+
+\begin{itemize}
+	\item Glavanic isolation (flyback converter only) 
+		isolates high-voltage from low-voltage, more safe.
+	\item Higher duty cycle = higher efficiency
+\end{itemize}
+
+\begin{center}
+	\begin{tabular}{cccc}
+		Value & Symbol & Unit & Notes \\\hline
+		Duty Cycle & D & - & $ 0 < D < 1 $ \\
+	\end{tabular}
+\end{center}
+
+\subsection{Buck}
+
+\begin{longtable}{lll}
+	\makecell[l]
+	{
+		Duty Cycle
+	} &
+	\makecell[l]
+	{
+		$ \cfrac{V_c}{V_s} = D $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+	\makecell[l]
+	{
+		Current
+	} &
+	\makecell[l]
+	{
+		$ I_B = \cfrac{V_s (D - D^2}{2 L f_s}  $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+\end{longtable}
+
+\begin{itemize}
+	\item Peak diode current = peak inductor current
+	\item Peak inductor current = average inductor current * 2
+\end{itemize}
+
+\subsection{Flyback}
+
+\begin{longtable}{lll}
+	\makecell[l]
+	{
+		Duty Cycle
+	} &
+	\makecell[l]
+	{
+		$ \cfrac{V_c}{V_s} = \cfrac{N_2}{N_1} \, \cfrac{D}{1-D} $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+\end{longtable}
+
+
+
+\section{DC Machines}
+\begin{center}
+	\begin{tabular}{cccc}
+		Value & Symbol & Unit & Notes \\\hline
+		Machine Constant & $K_m$ & ??? & Determined by geometry \\
+		Field Constant & $K_\phi$ & ??? & Determined by geometry \\
+		Pole Field & $ \phi_p $ & \unit{\weber} & - \\
+		Torque & $ T $ & \unit{\newton\meter} & - \\
+		Induced Voltage & $ e $ & \unit{\volt} & - \\
+		Armature Voltage & $ r_a $ & \unit{\volt} & - \\
+	\end{tabular}
+\end{center}
+
+\begin{longtable}{lll}
+	\makecell[l]
+	{
+		Induced Voltage
+	} &
+	\makecell[l]
+	{
+		$ e = K_m \phi_p \omega $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+	\makecell[l]
+	{
+		Torque
+	} &
+	\makecell[l]
+	{
+		$ T = K_m \phi_p i_a $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+
+	\makecell[l]
+	{
+		Field per pole \\
+		from Field Winding
+	} &
+	\makecell[l]
+	{
+		$ \phi_P = K_\phi i_f $ 
+	} &
+	\makecell[l]
+		{
+	} \\
+\end{longtable}
+
+\begin{center}
+	\fbox{\includegraphics[width=0.8\textwidth]{xfigs/dc_machine/dc_machine.pdf}}
+\end{center}
+
+
+
 \section{AC Machines}
 \begin{center}
 	\begin{tabular}{cccc}
 		Value & Symbol & Unit & Notes \\\hline
 		Angular Speed & $n $ & rpm [revolutions per minute] & - \\
-		Poles & $P$ & - & - \\
+		Poles & $P$ & - & Always even \\
 		Pole Pairs & $p$ & - & $p = \nicefrac{P}{2} $\\
 		Slip & $s$ & ratio of angular speeds & $0 \leq s \leq 1 $ \\
 	\end{tabular}
@@ -143,7 +367,7 @@
 	} &
 	\makecell[l]
 	{
-		$ n_s = \cfrac{120f}{P} = \cfrac{60f}{p}  $ 
+		$ n_s [\text{rpm}]= \cfrac{120f [\unit{\hertz}]}{P} = \cfrac{60f [\unit{\hertz}]}{p}  $ 
 	} &
 	\makecell[l]
 		{
@@ -161,6 +385,17 @@
 		{
 	} \\
 
+	\makecell[l]
+	{
+		Synchronous Speed
+	} &
+	\makecell[l]
+	{
+		$ \omega_\text{mech} = \cfrac{2 \pi f_\text{elec}}{p}   $ 
+	} &
+	\makecell[l]
+		{
+	} \\
 
 	\makecell[l]
 	{
